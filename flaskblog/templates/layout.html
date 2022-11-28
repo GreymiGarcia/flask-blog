@@ -31,8 +31,13 @@
                         <input type="search" class="form-control" placeholder="Search..." aria-label="Search">
                     </form> -->
                     <ul class="nav col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
-                        <li><a href="{{ url_for('login') }}" class="nav-link px-2 link-secondary">Login</a></li>
-                        <li><a href="{{ url_for('register') }}" class="nav-link px-2 link-dark">Sing UP</a></li>
+                        {% if current_user.is_authenticated %}
+                            <li><a href="{{ url_for('account') }}" class="nav-link px-2 link-secondary">Account</a></li>
+                            <li><a href="{{ url_for('logout') }}" class="nav-link px-2 link-secondary">Logout</a></li>
+                        {% else %}
+                            <li><a href="{{ url_for('login') }}" class="nav-link px-2 link-secondary">Login</a></li>
+                            <li><a href="{{ url_for('register') }}" class="nav-link px-2 link-dark">Register</a></li>
+                        {% endif %}
                     </ul>
                     <!-- <div class="dropdown text-end">
                         <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">

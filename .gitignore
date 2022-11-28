@@ -1,2 +1,2 @@
- __pycache__/
- flaskblog/__pycache__/
+ __pycache__/*
+ flaskblog/__pycache__/*
