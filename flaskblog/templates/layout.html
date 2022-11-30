@@ -32,6 +32,7 @@
                     </form> -->
                     <ul class="nav col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
                         {% if current_user.is_authenticated %}
+                        <li><a href="{{ url_for('new_post') }}" class="nav-link px-2 link-secondary">New Post</a></li>
                             <li><a href="{{ url_for('account') }}" class="nav-link px-2 link-secondary">Account</a></li>
                             <li><a href="{{ url_for('logout') }}" class="nav-link px-2 link-secondary">Logout</a></li>
                         {% else %}
