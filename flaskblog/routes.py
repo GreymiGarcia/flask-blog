@@ -99,7 +99,7 @@ def account():
         current_user.email = form.email.data
         db.session.commit()
         #Remove old account picture profile
-        if old_account_picture != current_user.image_file:
+        if old_account_picture != current_user.image_file and old_account_picture != 'default.jpg':
             os.remove(os.path.join(app.root_path, 'static/img', old_account_picture))
         flash(f'Your account has been updated!', 'success')
         return redirect(url_for('account'))
